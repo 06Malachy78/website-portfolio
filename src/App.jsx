@@ -9,16 +9,28 @@ import AcademicPage from './pages/AcademicPage';
 
 export default function App() {
   const appRef = useRef(null);
+  const pointerPosition = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
     const app = appRef.current;
-    const updatePointerPosition = (event) => {
-      app.style.setProperty('--pointer-x', `${event.clientX}px`);
-      app.style.setProperty('--pointer-y', `${event.clientY}px`);
+    const updatePointerPosition = (x, y) => {
+      app.style.setProperty('--pointer-x', `${x + window.scrollX}px`);
+      app.style.setProperty('--pointer-y', `${y + window.scrollY}px`);
+    };
+    const handlePointerMove = (event) => {
+      pointerPosition.current = { x: event.clientX, y: event.clientY };
+      updatePointerPosition(event.clientX, event.clientY);
+    };
+    const handleScroll = () => {
+      updatePointerPosition(pointerPosition.current.x, pointerPosition.current.y);
     };
 
-    window.addEventListener('pointermove', updatePointerPosition);
-    return () => window.removeEventListener('pointermove', updatePointerPosition);
+    window.addEventListener('pointermove', handlePointerMove);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('pointermove', handlePointerMove);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   return (

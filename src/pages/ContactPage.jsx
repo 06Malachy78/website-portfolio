@@ -34,6 +34,12 @@ export default function ContactPage() {
             </a>
           </article>
         </section>
+
+        <section className="contact-location" aria-labelledby="location-heading">
+          <p className="eyebrow">Location</p>
+          <h2 id="location-heading">Based in Norwich</h2>
+          <p>I am based in Norwich for one more year, and my hometown is Cambridge.</p>
+        </section>
       </main>
     </>
   );

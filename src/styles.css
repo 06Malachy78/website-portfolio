@@ -27,7 +27,7 @@ body {
 
 .app-shell {
   min-height: 100vh;
-  background: radial-gradient(circle 420px at var(--pointer-x, 50%) var(--pointer-y, 0%), rgba(124, 156, 255, 0.08), transparent 70%), linear-gradient(135deg, #080c16 0%, #10182a 100%);
+  background: radial-gradient(circle 450px at var(--pointer-x, 50%) var(--pointer-y, 0%), rgba(124, 156, 255, 0.08), transparent 70%), linear-gradient(135deg, #080c16 0%, #10182a 100%);
 }
 
 a {
@@ -272,6 +272,32 @@ a {
   overflow-wrap: anywhere;
 }
 
+.contact-location {
+  background: var(--panel-alt);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  margin-top: 20px;
+  padding: 26px;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-location:hover {
+  border-color: rgba(124, 156, 255, 0.5);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.25);
+  transform: translateY(-4px);
+}
+
+.contact-location h2 {
+  font-size: 1.35rem;
+  margin: 0 0 10px;
+}
+
+.contact-location p:last-child {
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
 .btn {
   display: inline-block;
   padding: 12px 22px;
@@ -368,6 +394,92 @@ a {
   margin-top: 0;
   margin-bottom: 12px;
   font-size: 1.5rem;
+}
+
+.project-toggle {
+  align-items: start;
+  background: transparent;
+  border: 0;
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  font: inherit;
+  justify-content: space-between;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+}
+
+.project-toggle strong {
+  display: block;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.project-toggle-label {
+  color: var(--accent);
+  display: block;
+  font-family: monospace;
+  font-size: 0.7rem;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.project-toggle-icon {
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--accent);
+  display: inline-flex;
+  flex: 0 0 auto;
+  font-size: 1.25rem;
+  height: 30px;
+  justify-content: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+  width: 30px;
+}
+
+.project-toggle:hover .project-toggle-icon,
+.project-toggle:focus-visible .project-toggle-icon {
+  background: rgba(124, 156, 255, 0.16);
+  transform: rotate(90deg);
+}
+
+.project-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 6px;
+}
+
+.project-details {
+  border-left: 2px solid var(--accent);
+  margin: 22px 0;
+  padding-left: 16px;
+}
+
+.project-details p {
+  margin-bottom: 18px;
+}
+
+.project-details h3 {
+  font-size: 0.85rem;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+}
+
+.project-details ul {
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.project-details li::before {
+  color: var(--accent);
+  content: '> ';
+  font-family: monospace;
 }
 
 .project-card p {

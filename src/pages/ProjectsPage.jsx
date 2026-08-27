@@ -49,8 +49,10 @@ export default function ProjectsPage() {
               key={project.title}
               title={project.title}
               description={project.description}
+              details={project.details}
               link={project.link}
               tags={project.tags}
+              skills={project.skills}
             />
           ))}
         </section>
