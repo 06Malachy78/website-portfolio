@@ -1,30 +1,36 @@
 import Hero from '../components/Hero';
 
-const modules = [
-  { name: 'Computer Science Project', code: 'CMP-3010', grade: 'A' },
-  { name: 'Software Engineering', code: 'CMP-2201', grade: 'A-' },
-  { name: 'Databases', code: 'CMP-2108', grade: 'B+' },
-  { name: 'Algorithms and Complexity', code: 'CMP-2204', grade: 'A' },
-  { name: 'Operating Systems', code: 'CMP-2301', grade: 'B' },
-  { name: 'Cybersecurity Fundamentals', code: 'CMP-2402', grade: 'A-' },
-  { name: 'Human-Computer Interaction', code: 'CMP-2106', grade: 'B+' },
+const academicYears = [
+  {
+    year: 'Year 1',
+    academicYear: '2024/25',
+    modules: [
+      { name: 'Web-Based Programming', grade: 74.30 },
+      { name: 'Systems Development', grade: 77.55 },
+      { name: 'Computing Principles', grade: 80.40 },
+      { name: 'Database Systems', grade: 92.30 },
+      { name: 'Mathematics for Computing B', grade: 88.65 },
+      { name: 'Programming 1', grade: 72.15 },
+    ],
+  },
+  {
+    year: 'Year 2',
+    academicYear: '2025/26',
+    modules: [
+      { name: 'Architectures & Operating Systems', grade: 76.73 },
+      { name: 'Programming 2', grade: 79.20 },
+      { name: 'Information Retrieval', grade: 87.90 },
+      { name: 'Software Engineering', grade: 76.25 },
+      { name: 'Data Structures & Algorithms', grade: 87.20 },
+      { name: 'Networks', grade: 72.98 },
+    ],
+  },
 ];
 
-const average = (modules.reduce((total, module) => total + getGradeValue(module.grade), 0) / modules.length).toFixed(2);
+const modules = academicYears.flatMap((academicYear) => academicYear.modules);
 
-function getGradeValue(grade) {
-  const values = {
-    'A': 90,
-    'A-': 85,
-    'B+': 80,
-    'B': 75,
-    'B-': 70,
-    'C+': 67,
-    'C': 60,
-  };
-
-  return values[grade] ?? 0;
-}
+const average = (modules.reduce((total, module) => total + module.grade, 0) / modules.length).toFixed(2);
+const topGrade = Math.max(...modules.map((module) => module.grade));
 
 export default function AcademicPage() {
   return (
@@ -38,30 +44,34 @@ export default function AcademicPage() {
             <strong>{modules.length}</strong>
           </div>
           <div className="summary-card">
-            <span>Average Grade</span>
+            <span>Average Percentage</span>
             <strong>{average}%</strong>
           </div>
           <div className="summary-card">
-            <span>Top Grade</span>
-            <strong>A</strong>
+            <span>Top Percentage</span>
+            <strong>{topGrade}%</strong>
           </div>
         </section>
 
-        <section className="academic-panel">
-          <div className="academic-header">
-            <div>Module</div>
-            <div>Code</div>
-            <div>Grade</div>
-          </div>
-
-          {modules.map((module) => (
-            <div className="academic-row" key={module.code}>
-              <div className="module-name">{module.name}</div>
-              <div className="module-code">{module.code}</div>
-              <div className="module-grade"><span className="grade-badge">{module.grade}</span></div>
+        {academicYears.map((academicYear) => (
+          <section className="academic-panel" key={academicYear.year}>
+            <div className="academic-year-heading">
+              <span>{academicYear.academicYear}</span>
+              <h2>{academicYear.year} Grades</h2>
             </div>
-          ))}
-        </section>
+            <div className="academic-header">
+              <div>Module</div>
+              <div>Percentage</div>
+            </div>
+
+            {academicYear.modules.map((module) => (
+              <div className="academic-row" key={module.name}>
+                <div className="module-name">{module.name}</div>
+                <div className="module-grade"><span className="grade-badge">{module.grade}%</span></div>
+              </div>
+            ))}
+          </section>
+        ))}
       </main>
     </>
   );
