@@ -607,6 +607,66 @@ a {
   font-size: 1.8rem;
 }
 
+.skills-intro {
+  margin-bottom: 26px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.skill-group {
+  background: var(--panel-alt);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skill-group:hover {
+  border-color: rgba(124, 156, 255, 0.5);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.25);
+  transform: translateY(-4px);
+}
+
+.skill-group h2 {
+  font-size: 1.35rem;
+  margin: 0 0 18px;
+}
+
+.skill-list {
+  display: grid;
+  gap: 14px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.skill-list li {
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+}
+
+.skill-list li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.skill-name {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.skill-description {
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
 .footer {
   text-align: center;
   padding: 22px 20px 40px;
@@ -666,6 +726,10 @@ a {
   }
 
   .contact-options {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-grid {
     grid-template-columns: 1fr;
   }
 

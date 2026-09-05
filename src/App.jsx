@@ -6,6 +6,7 @@ import ProjectsPage from './pages/ProjectsPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import AcademicPage from './pages/AcademicPage';
+import SkillsPage from './pages/SkillsPage';
 
 export default function App() {
   const appRef = useRef(null);
@@ -43,6 +44,7 @@ export default function App() {
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/academic" element={<AcademicPage />} />
+          <Route path="/skills" element={<SkillsPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </div>
