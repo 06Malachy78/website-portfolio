@@ -20,7 +20,11 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <NavLink className="nav-brand" to="/" aria-label="Return to the home page">
-          <span className="nav-logo">Malachy</span>
+          <img className="nav-profile-photo" src={profilePhoto} alt="" />
+          <span className="nav-brand-copy">
+            <span className="nav-logo">Malachy</span>
+            <span className="nav-role">CS student</span>
+          </span>
         </NavLink>
       <ul className="nav-links">
         {navItems.map((item) => (
