@@ -59,9 +59,9 @@ const pageData = {
         </div>
 
         <div class="project-card">
-          <h2>Gelate — Co-op Puzzle Game Concept</h2>
-          <p>A unique co-op puzzle game prototype exploring movement-based mechanics.</p>
-          <a class="btn" href="#" target="_blank" rel="noreferrer">View Concept</a>
+          <h2>Space Survival</h2>
+          <p>An A-Level game project built in Godot, focused on resource gathering, survival, and hazard avoidance.</p>
+          <a class="btn" href="https://lnkd.in/p/eicwvMNC" target="_blank" rel="noreferrer">View Project</a>
         </div>
 
         <div class="project-card">

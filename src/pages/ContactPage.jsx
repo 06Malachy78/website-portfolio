@@ -1,46 +1,54 @@
-import Hero from '../components/Hero';
-
 export default function ContactPage() {
   return (
-    <>
-      <Hero title="Contact" subtitle="Let’s build something interesting together." />
-
-      <main className="container">
-        <section className="intro contact-intro">
-          <h2>Get in Touch</h2>
-          <p>
-            If you’d like to collaborate, ask about a project, or talk through an idea,
-            I’d love to hear from you.
-          </p>
-        </section>
+    <main className="contact-page">
+      <div className="contact-layout">
+        <header className="contact-heading">
+          <p className="eyebrow">Get in touch</p>
+          <h1>Contact</h1>
+          <p className="contact-subtitle">Happy to talk internships, graduate roles, CTFs, or anything security-related.</p>
+          <p className="contact-note">Tell me what you are working on, what you are looking for, or where you think we could collaborate.</p>
+        </header>
 
         <section className="contact-options" aria-label="Contact options">
           <article className="contact-option">
-            <p className="eyebrow">Email</p>
-            <h2>Send me a message</h2>
-            <a className="btn" href="mailto:malachyhearnden@hotmail.co.uk">malachyhearnden@hotmail.co.uk</a>
+            <div className="contact-option-heading">
+              <span className="contact-icon" aria-hidden="true">@</span>
+              <h2>Email</h2>
+            </div>
+            <p>Best for detailed questions, CVs, opportunities, and project conversations.</p>
+            <a className="contact-action" href="mailto:malachyhearnden@hotmail.co.uk">
+              <span>malachyhearnden@hotmail.co.uk</span>
+              <span aria-hidden="true">-&gt;</span>
+            </a>
           </article>
 
           <article className="contact-option">
-            <p className="eyebrow">LinkedIn</p>
-            <h2>Connect with me</h2>
+            <div className="contact-option-heading">
+              <span className="contact-icon" aria-hidden="true">in</span>
+              <h2>LinkedIn</h2>
+            </div>
+            <p>For professional conversations, internships, graduate roles, and networking.</p>
             <a
-              className="btn"
+              className="contact-action"
               href="https://www.linkedin.com/in/malachy-hearnden-84a0aa282/"
               target="_blank"
               rel="noreferrer"
             >
-              View my LinkedIn
+              <span>View my profile</span>
+              <span aria-hidden="true">-&gt;</span>
             </a>
           </article>
-        </section>
 
-        <section className="contact-location" aria-labelledby="location-heading">
-          <p className="eyebrow">Location</p>
-          <h2 id="location-heading">Based in Norwich</h2>
-          <p>I am based in Norwich for one more year, and my hometown is Cambridge.</p>
+          <article className="contact-option">
+            <div className="contact-option-heading">
+              <span className="contact-icon" aria-hidden="true">*</span>
+              <h2>Location</h2>
+            </div>
+            <p>Based in Norwich for one more year, with Cambridge as my home base.</p>
+            <span className="contact-value">UK - open to remote work</span>
+          </article>
         </section>
-      </main>
-    </>
+      </div>
+    </main>
   );
 }

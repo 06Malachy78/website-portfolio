@@ -17,7 +17,7 @@ export default function ProjectsPage() {
 
   return (
     <>
-      <Hero title="My Projects" subtitle="A collection of apps, games, prototypes, and experiments." />
+      <Hero title="My Projects" subtitle="A collection of apps, games, prototypes, experiments, and coursework from my studies." />
 
       <main className="container">
         <section className="project-controls" aria-label="Filter projects">
