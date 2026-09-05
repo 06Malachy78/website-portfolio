@@ -28,23 +28,25 @@ const academicYears = [
 ];
 
 const modules = academicYears.flatMap((academicYear) => academicYear.modules);
+const bestGradeThreshold = 70;
+const bestModules = modules.filter((module) => module.grade >= bestGradeThreshold);
 
-const average = (modules.reduce((total, module) => total + module.grade, 0) / modules.length).toFixed(2);
-const topGrade = Math.max(...modules.map((module) => module.grade));
+const average = (bestModules.reduce((total, module) => total + module.grade, 0) / bestModules.length).toFixed(2);
+const topGrade = Math.max(...bestModules.map((module) => module.grade));
 
 export default function AcademicPage() {
   return (
     <>
-      <Hero title="Academic Record" subtitle="A summary of my modules and grades." />
+      <Hero title="Academic Highlights" subtitle="Selected modules with results of 70% or above." />
 
       <main className="container">
         <section className="academic-summary">
           <div className="summary-card">
-            <span>Total Modules</span>
-            <strong>{modules.length}</strong>
+            <span>Highlighted Modules</span>
+            <strong>{bestModules.length}</strong>
           </div>
           <div className="summary-card">
-            <span>Average Percentage</span>
+            <span>Highlight Average</span>
             <strong>{average}%</strong>
           </div>
           <div className="summary-card">
@@ -64,7 +66,7 @@ export default function AcademicPage() {
               <div>Percentage</div>
             </div>
 
-            {academicYear.modules.map((module) => (
+            {academicYear.modules.filter((module) => module.grade >= bestGradeThreshold).map((module) => (
               <div className="academic-row" key={module.name}>
                 <div className="module-name">{module.name}</div>
                 <div className="module-grade"><span className="grade-badge">{module.grade}%</span></div>

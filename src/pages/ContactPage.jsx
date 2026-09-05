@@ -15,9 +15,9 @@ export default function ContactPage() {
               <span className="contact-icon" aria-hidden="true">@</span>
               <h2>Email</h2>
             </div>
-            <p>Best for detailed questions, CVs, opportunities, and project conversations.</p>
-            <a className="contact-action" href="mailto:malachyhearnden@hotmail.co.uk">
-              <span>malachyhearnden@hotmail.co.uk</span>
+            <p>Best for internships, graduate roles, CTFs, and project conversations.</p>
+            <a className="contact-action" href="mailto:malachy78hearnden@gmail.com">
+              <span>malachy78hearnden@gmail.com</span>
               <span aria-hidden="true">-&gt;</span>
             </a>
           </article>
